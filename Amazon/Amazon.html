@@ -14341,7 +14341,7 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Importamos os componentes necessarios</span>
@@ -14369,7 +14369,7 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">amazon_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.amazon.com.br/s?k=iphone&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
@@ -14391,7 +14391,7 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Normalizacao dos Dados</span>
@@ -14431,10 +14431,10 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
 <p>O filtro <strong>filter_preco_a_base</strong> corresponde ao filtro do span dentro das classes definidas pelo filter_preco_secondary, ou seja, é o conteúdo do preço dos produtos que são precificados sob o texto 'Mais opções de compra'.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Inicio da Logica de Processamento de Dados</span>
@@ -14452,10 +14452,7 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
 <span class="k">def</span> <span class="nf">anexa_precos</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista_div</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="s2">&quot;R$&quot;</span> <span class="ow">in</span> <span class="n">lista_div</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">lista_div</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">filter_preco_offscreen</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">precos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lista_div</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="s1">&#39;a-price&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="s1">&#39;a-price-whole&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">precos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lista_div</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">filter_preco_offscreen</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+                <span class="n">precos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;R$ &#39;</span> <span class="o">+</span> <span class="n">lista_div</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="s1">&#39;a-price&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="s1">&#39;a-price-whole&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">precos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;R$ 0,00&quot;</span><span class="p">)</span>
 
@@ -14474,53 +14471,16 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-7-5daa97b552c1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">     26</span> 
-<span class="ansi-green-fg">     27</span> anexa_produtos<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 28</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>anexa_precos<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     29</span> anexa_conteudos<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     30</span> <span class="ansi-red-intense-fg ansi-bold"># Fim da Logica de Processamento de Dados</span>
-
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-7-5daa97b552c1&gt;</span> in <span class="ansi-cyan-fg">anexa_precos</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">     14</span>     <span class="ansi-green-intense-fg ansi-bold">for</span> i <span class="ansi-green-intense-fg ansi-bold">in</span> range<span class="ansi-yellow-intense-fg ansi-bold">(</span>len<span class="ansi-yellow-intense-fg ansi-bold">(</span>lista_div<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">-</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">     15</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;R$&#34;</span> <span class="ansi-green-intense-fg ansi-bold">in</span> lista_div<span class="ansi-yellow-intense-fg ansi-bold">[</span>i<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>text<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 16</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">if</span> lista_div<span class="ansi-yellow-intense-fg ansi-bold">[</span>i<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>find<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;span&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> attrs<span class="ansi-yellow-intense-fg ansi-bold">=</span>filter_preco_offscreen<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">     17</span>                 precos<span class="ansi-yellow-intense-fg ansi-bold">.</span>append<span class="ansi-yellow-intense-fg ansi-bold">(</span>lista_div<span class="ansi-yellow-intense-fg ansi-bold">[</span>i<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>find<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;span&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> attrs<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#39;a-price&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>find<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;span&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> attrs<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#39;a-price-whole&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>text<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     18</span>             <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;filter_preco_offscreen&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="5.-Armazenamento-dos-Dados"><strong>5. Armazenamento dos Dados</strong><a class="anchor-link" href="#5.-Armazenamento-dos-Dados">&#182;</a></h2><p>Para o armazenamento dos dados, escolhemos o tipo <strong>CSV (Comma-separated Values)</strong> por se tratar de um tipo de arquivo universal, que, ao ser aberto em qualquer editor de texto - incluindo-se nisto o <strong>MS Excel</strong> - tem seus dados exibidos de forma padronizada.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Armazenamento dos dados em um arquivo .csv</span>
@@ -14532,7 +14492,6 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
             <span class="n">spamwriter</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">produto</span><span class="p">,</span> <span class="n">preco</span><span class="p">])</span>
             
 <span class="n">salva_em_csv</span><span class="p">()</span>
-<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;produtos_amazon.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;produtos_amazon.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
@@ -14540,6 +14499,293 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Produto</th>
+      <th>Preco</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Iphone 11 Apple Preto, 128gb Desbloqueado - Mh...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Apple iPhone 8 Plus, 64GB, Gold</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iphone 11 Apple Preto, 64gb Desbloqueado - Mhd...</td>
+      <td>R$ 4.940,</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Iphone 11 Apple Branco, 64gb Desbloqueado - Mh...</td>
+      <td>R$ 4.940,</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Iphone 12 Pro Apple Azul-pacífico, 128gb Desbl...</td>
+      <td>R$ 3.898,</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>iPhone SE Branco, com Tela de 4,7, 4G, 64 GB e...</td>
+      <td>R$ 4.499,</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Novo Apple iPhone 12 (128 GB, Azul)</td>
+      <td>R$ 4.533,</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Iphone Xr Apple Branco, 128gb Desbloqueado - M...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Novo Apple iPhone 12 Pro Max (128 GB, Azul Pac...</td>
+      <td>R$ 2.899,</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Novo Apple iPhone 12 Pro Max (128 GB, Dourado)</td>
+      <td>R$ 7.299,</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Iphone Xr Apple (product) Vermelho, 64gb Desbl...</td>
+      <td>R$ 4.149,</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Celular Apple iPhone 11 64gb / Tela 6.1'' / 12...</td>
+      <td>R$ 8.299,</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Novo Apple iPhone 12 Pro Max (128 GB, Grafite)</td>
+      <td>R$ 8.400,</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Novo Apple iPhone 12 (128 GB, Branco)</td>
+      <td>R$ 3.814,</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Xiaomi Redmi Note 9 128GB 4GB RAM - Versión Gl...</td>
+      <td>R$ 4.599,</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Cabo para iPhone USB-C to Lightning Apple Orig...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>iPhone 11 Branco, com Tela de 6,1, 4G, 128 GB ...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Iphone Xr Apple Branco, 128gb Desbloqueado - M...</td>
+      <td>R$ 1.210,</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Capa Capinha Protetora Para Iphone 12 e 12 Pro...</td>
+      <td>R$ 94,</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Novo Apple iPhone 12 Pro Max (256 GB, Grafite)</td>
+      <td>R$ 4.973,</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>CAPA CASE CAPINHA SILICONE AVELUDADO IPHONE 11...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Iphone Xr Apple Preto, 64gb Desbloqueado - Mry...</td>
+      <td>R$ 54,</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Apple Iphone 12 (128GB Preto) - Desbloqueado A...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Novo Apple iPhone 12 Pro Max (256 GB, Azul Pac...</td>
+      <td>R$ 25,</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Carregador Original iPhone 12 Turbo Usb-c20w</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>iPhone 11 64GB Preto iOS 4G Câmera 12MP - Apple</td>
+      <td>R$ 6.499,</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>iPhone SE 64GB Black Novo Desbloqueado Tela 4,...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Novo Apple iPhone 12 Pro (256 GB, Grafite)</td>
+      <td>R$ 75,</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Iphone 11 128Gb Preto iOS 4G Câmera 12Mp - Apple</td>
+      <td>R$ 4.799,</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Novo Apple iPhone 12 Pro (256 GB, Azul Marinho)</td>
+      <td>R$ 2.999,</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Smartphone Apple Iphone 7 Plus 128GB 4G iOS 10...</td>
+      <td>R$ 8.350,</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>iPhone X 256GB Cinza Espacial</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Iphone 11 Pro Max Apple Dourado, 256gb Desbloq...</td>
+      <td>R$ 8.899,</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Carregador de Iphone Original 20w Usb-c SE XR ...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Spigen Capa Ultra Hybrid Projectada para Apple...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>iPhone 8 Plus Apple 64GB Cinza Espacial Tela R...</td>
+      <td>R$ 7.999,</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>iPhone 8 256GB Apple Tela 4.7 iOS 11 Câmera 12MP</td>
+      <td>R$ 160,</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Capa Protetora, Shield Preta com Pelicula, Iph...</td>
+      <td>R$ 86,</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Pelicula Vidro Temperado Hprime Apple iPhone 1...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Iphone 11 Apple Vermelho, 64gb Desbloqueado - ...</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>iPhone 7 128GB Dourado</td>
+      <td>R$ 99,</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Celular Xiaomi Poco X3 6GB/128GB NFC - Shadow ...</td>
+      <td>R$ 39,</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Fone de Ouvido Apple EarPods Lightning</td>
+      <td>R$ 4.533,</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Iphone 8 Plus 64gb Original Apple - De Vitrine...</td>
+      <td>R$ 2.394,</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Apple MacBook Air 13.3", Chip M1, 8GB RAM, 256...</td>
+      <td>R$ 1.770,</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Smartphone, Apple, iPhone 7 MN952BR/A, 128 GB,...</td>
+      <td>R$ 178,</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Novo Apple iPhone 12 Pro (128 GB, Grafite)</td>
+      <td>R$ 0,00</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Smartphone, Apple, iPhone 7 PLUS MN4M2BZ/A, 12...</td>
+      <td>R$ 7.960,</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14558,6 +14804,20 @@ Successfully installed beautifulsoup4-4.9.3 bs4-0.0.1 soupsieve-2.2.1
 <p><strong>[3]</strong> - Documentação da Biblioteca bs4 - <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
